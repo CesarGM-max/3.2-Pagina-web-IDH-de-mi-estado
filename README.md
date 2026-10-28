@@ -6,7 +6,7 @@
 | Carrera | Ingeniería en Sistemas Computacionales |
 | Institución | Tecnológico Nacional de México – Campus Mazatlán |
 | Unidad / Tema | 3. Escenario socio-cultural / 3.2 Cultura, diversidad socio-cultural |
-| Integrante(s) | Cesar Jesus Gamez Mendoza *(agrega aquí a tu equipo)* |
+| Integrante | Cesar Jesus Gamez Mendoza (individual) |
 | Video explicativo | [https://youtube.com/shorts/zsCoSbPDxxs](https://youtube.com/shorts/zsCoSbPDxxs) |
 | Herramientas | IA generativa, Make (Custom webhook, Make AI Agent, Webhook response), GitHub Pages |
 | Página publicada | [https://cesargm-max.github.io/IDH-de-mi-estado/](https://cesargm-max.github.io/IDH-de-mi-estado/) |
@@ -282,10 +282,10 @@ La brecha entre el Distrito Federal (0.830) y Chiapas (0.667) es de 0.163 puntos
 Un solo valor estatal mezcla ciudades grandes con servicios (por ejemplo Culiacán, Mazatlán o Los Mochis) y comunidades pequeñas y dispersas, como las de la zona serrana, donde suele haber menos escuelas, clínicas, transporte e ingresos más bajos. El promedio puede verse "alto" aunque una parte de la población viva con rezagos importantes. Para decidir políticas públicas hacen falta datos desagregados por municipio o localidad y por tipo de zona.
 
 **4. Los datos del informe son de 2012. ¿Qué riesgo hay en tomar decisiones con datos antiguos? ¿Por qué creen que no hay datos más recientes por entidad?**
-El riesgo es actuar sobre una realidad que ya cambió: pueden asignarse recursos a problemas que ya se resolvieron o ignorarse otros nuevos (por ejemplo, la posición de Sinaloa bajó de la 7 a la 11 entre 2008 y 2012, lo que muestra que las posiciones se mueven). Sobre por qué no hay cifras más recientes en esta fuente, una explicación razonable es que el índice de ingreso por entidad no lo publica el INEGI directamente: el PNUD debe estimarlo con la ENIGH ajustada a cuentas nacionales, y además combinar esperanza de vida, años de escolaridad e ingreso de fuentes con distintas fechas. Es un cálculo costoso que no se repite cada año. Esta es una hipótesis del equipo, no un dato del informe.
+El riesgo es actuar sobre una realidad que ya cambió: pueden asignarse recursos a problemas que ya se resolvieron o ignorarse otros nuevos (por ejemplo, la posición de Sinaloa bajó de la 7 a la 11 entre 2008 y 2012, lo que muestra que las posiciones se mueven). Sobre por qué no hay cifras más recientes en esta fuente, una explicación razonable es que el índice de ingreso por entidad no lo publica el INEGI directamente: el PNUD debe estimarlo con la ENIGH ajustada a cuentas nacionales, y además combinar esperanza de vida, años de escolaridad e ingreso de fuentes con distintas fechas. Es un cálculo costoso que no se repite cada año. Esta es una hipótesis personal, no un dato del informe.
 
 **5. ¿La IA respetó los datos del PDF? ¿Qué aprendieron sobre la importancia de verificar lo que genera una IA?**
-Sí: en las tres entidades, las 15 cifras comparadas (IDH, salud, educación, ingreso y lugar nacional) coincidieron exactamente con el informe, y la IA no inventó cifras. Esto se logró porque las instrucciones la limitaban al archivo de Knowledge y pedían un formato fijo. Aun así, la parte de interpretación es texto generado por la IA y necesita revisión: por ejemplo, dijo que la educación de Sinaloa era un "rezago", cuando en la comparación nacional es su mejor posición. Aprendimos que una IA con fuente controlada reduce los errores, pero siempre hay que contrastar las cifras con la fuente y leer con criterio las interpretaciones, sobre todo antes de usarlas para decidir o para entregar un trabajo.
+Sí: en las tres entidades, las 15 cifras comparadas (IDH, salud, educación, ingreso y lugar nacional) coincidieron exactamente con el informe, y la IA no inventó cifras. Esto se logró porque las instrucciones la limitaban al archivo de Knowledge y pedían un formato fijo. Aun así, la parte de interpretación es texto generado por la IA y necesita revisión: por ejemplo, dijo que la educación de Sinaloa era un "rezago", cuando en la comparación nacional es su mejor posición. Aprendí que una IA con fuente controlada reduce los errores, pero siempre hay que contrastar las cifras con la fuente y leer con criterio las interpretaciones, sobre todo antes de usarlas para decidir o para entregar un trabajo.
 
 ## Conclusiones
 

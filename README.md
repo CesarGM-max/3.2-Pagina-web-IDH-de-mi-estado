@@ -11,6 +11,16 @@
 | Herramientas | IA generativa, Make (Custom webhook, Make AI Agent, Webhook response), GitHub Pages |
 | Página publicada | [https://cesargm-max.github.io/IDH-de-mi-estado/](https://cesargm-max.github.io/IDH-de-mi-estado/) |
 
+## Estructura del repositorio
+
+| Carpeta / archivo | Contenido |
+|---|---|
+| `README.md` | Este reporte técnico con explicaciones y respuestas a las preguntas de reflexión. |
+| `codigo/` | `index.html` (página web) y `blueprint.json` (escenario de Make exportado). |
+| `imagenes/` | Capturas del escenario de Make y de la página funcionando. |
+| `video/enlace.txt` | Enlace al video de YouTube con la prueba en vivo. |
+| `resultados/` | PDF con lo que se aprendió en la práctica. |
+
 ## Introducción
 
 El Índice de Desarrollo Humano (IDH) del PNUD resume en un valor de 0 a 1 tres capacidades básicas: vivir una vida larga y saludable (salud), adquirir conocimientos (educación) y tener un nivel de vida digno (ingreso). El PNUD lo calcula como la media geométrica de los tres índices: IDH = IS^(1/3) × IE^(1/3) × II^(1/3). En esta práctica se construyó una página web donde se elige una entidad federativa y una IA responde con sus datos de IDH, usando únicamente un archivo de conocimiento tomado del informe *Índice de Desarrollo Humano para las entidades federativas, México 2015* (PNUD, datos de 2012).
@@ -61,7 +71,7 @@ En las tres consultas el año de los datos fue 2012, igual que en el informe.
 
 ## Código
 
-Archivo `index.html` publicado en GitHub Pages (un solo archivo con HTML, CSS y JavaScript). El `fetch` envía por `POST` el campo `entidad` al Custom webhook de Make y muestra en pantalla la respuesta de texto plano del agente.
+La carpeta [`codigo/`](codigo/) contiene [`index.html`](codigo/index.html) (publicado en GitHub Pages, un solo archivo con HTML, CSS y JavaScript) y [`blueprint.json`](codigo/blueprint.json), el escenario de Make `IDH_Estado_Equipo1` exportado (Custom webhook → Make AI Agent con Knowledge → Webhook response). El `fetch` envía por `POST` el campo `entidad` al Custom webhook de Make y muestra en pantalla la respuesta de texto plano del agente.
 
 ```html
 <!DOCTYPE html>
@@ -269,6 +279,14 @@ Capturas tomadas del video de la práctica (https://youtube.com/shorts/zsCoSbPDx
 **Figura 8.** Resultado de la consulta de Sinaloa: IDH 0.757 (Alto), salud 0.832, educación 0.649, ingreso 0.805, lugar 11 de 32, año 2012 e interpretación.
 
 ![Resultado de la consulta de Sinaloa](imagenes/08_resultado_sinaloa.png)
+
+## Video
+
+El enlace al video con la prueba en vivo está en [`video/enlace.txt`](video/enlace.txt): https://youtube.com/shorts/zsCoSbPDxxs
+
+## Resultados
+
+El documento PDF con lo que se aprendió en esta práctica está en [`resultados/aprendizaje_practica_3_2.pdf`](resultados/aprendizaje_practica_3_2.pdf).
 
 ## Preguntas de reflexión
 

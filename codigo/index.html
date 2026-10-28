@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>IDH de mi estado</title>
+<style>
+  :root {
+    --verde-oscuro: #1f4d2b;
+    --verde: #2e7d46;
+    --verde-claro: #e6f2e6;
+    --tierra: #8a6d3b;
+    --cielo: #dff0f7;
+    --texto: #1d2b20;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    font-family: "Segoe UI", Roboto, Arial, sans-serif;
+    color: var(--texto);
+    background: linear-gradient(180deg, var(--cielo) 0%, var(--verde-claro) 100%);
+    min-height: 100vh;
+    line-height: 1.5;
+  }
+  header {
+    background: var(--verde-oscuro);
+    color: #fff;
+    padding: 28px 16px;
+    text-align: center;
+  }
+  header h1 { margin: 0 0 6px; font-size: clamp(1.6rem, 5vw, 2.4rem); }
+  header p { margin: 0; opacity: .9; }
+  main { max-width: 760px; margin: 0 auto; padding: 20px 16px 40px; }
+  .tarjeta {
+    background: #fff;
+    border-radius: 14px;
+    padding: 20px;
+    box-shadow: 0 4px 14px rgba(31, 77, 43, .15);
+    margin-bottom: 20px;
+    border-left: 6px solid var(--verde);
+  }
+  .tarjeta h2 { margin-top: 0; color: var(--verde-oscuro); font-size: 1.2rem; }
+  label { font-weight: 600; display: block; margin-bottom: 8px; }
+  .controles { display: flex; gap: 12px; flex-wrap: wrap; }
+  select, button {
+    font-size: 1rem;
+    padding: 12px 14px;
+    border-radius: 10px;
+    border: 2px solid var(--verde);
+  }
+  select { flex: 1 1 240px; background: #fff; color: var(--texto); }
+  button {
+    flex: 0 0 auto;
+    background: var(--verde);
+    color: #fff;
+    font-weight: 700;
+    cursor: pointer;
+  }
+  button:hover:not(:disabled) { background: var(--verde-oscuro); }
+  button:disabled { opacity: .6; cursor: not-allowed; }
+  #resultado {
+    margin-top: 18px;
+    padding: 16px;
+    background: var(--verde-claro);
+    border: 2px dashed var(--verde);
+    border-radius: 10px;
+    white-space: pre-line;
+    min-height: 60px;
+    overflow-wrap: anywhere;
+  }
+  #resultado.error { background: #fbeaea; border-color: #b03a3a; color: #7a1f1f; }
+  footer { text-align: center; font-size: .85rem; color: var(--tierra); padding: 0 16px 24px; }
+  @media (max-width: 480px) {
+    button { width: 100%; }
+    .tarjeta { padding: 16px; }
+  }
+</style>
+</head>
+<body>
+<header>
+  <h1>IDH de mi estado</h1>
+  <p>Desarrollo Sustentable · TecNM Campus Mazatlán</p>
+</header>
+
+<main>
+  <section class="tarjeta">
+    <h2>¿Qué es el IDH?</h2>
+    <p>
+      El Índice de Desarrollo Humano (IDH) del PNUD resume en un valor de 0 a 1 tres capacidades básicas
+      de las personas: vivir una vida larga y saludable (salud), adquirir conocimientos (educación) y tener
+      un nivel de vida digno (ingreso). Calculado por entidad federativa, muestra que en un mismo país hay
+      estados con niveles de desarrollo muy distintos.
+    </p>
+  </section>
+
+  <section class="tarjeta">
+    <label for="entidad">Elige una entidad federativa</label>
+    <div class="controles">
+      <select id="entidad">
+        <option value="Aguascalientes">Aguascalientes</option>
+        <option value="Baja California">Baja California</option>
+        <option value="Baja California Sur">Baja California Sur</option>
+        <option value="Campeche">Campeche</option>
+        <option value="Chiapas">Chiapas</option>
+        <option value="Chihuahua">Chihuahua</option>
+        <option value="Coahuila">Coahuila</option>
+        <option value="Colima">Colima</option>
+        <option value="Distrito Federal">Distrito Federal (Ciudad de México)</option>
+        <option value="Durango">Durango</option>
+        <option value="Estado de México">Estado de México</option>
+        <option value="Guanajuato">Guanajuato</option>
+        <option value="Guerrero">Guerrero</option>
+        <option value="Hidalgo">Hidalgo</option>
+        <option value="Jalisco">Jalisco</option>
+        <option value="Michoacán">Michoacán</option>
+        <option value="Morelos">Morelos</option>
+        <option value="Nayarit">Nayarit</option>
+        <option value="Nuevo León">Nuevo León</option>
+        <option value="Oaxaca">Oaxaca</option>
+        <option value="Puebla">Puebla</option>
+        <option value="Querétaro">Querétaro</option>
+        <option value="Quintana Roo">Quintana Roo</option>
+        <option value="San Luis Potosí">San Luis Potosí</option>
+        <option value="Sinaloa" selected>Sinaloa</option>
+        <option value="Sonora">Sonora</option>
+        <option value="Tabasco">Tabasco</option>
+        <option value="Tamaulipas">Tamaulipas</option>
+        <option value="Tlaxcala">Tlaxcala</option>
+        <option value="Veracruz">Veracruz</option>
+        <option value="Yucatán">Yucatán</option>
+        <option value="Zacatecas">Zacatecas</option>
+      </select>
+      <button id="consultar" type="button">Consultar</button>
+    </div>
+    <div id="resultado" aria-live="polite"></div>
+  </section>
+</main>
+
+<footer>Datos: PNUD, Índice de Desarrollo Humano para las entidades federativas, México 2015 (datos de 2012).</footer>
+
+<script>
+  // PEGA AQUI LA URL DEL WEBHOOK DE MAKE
+  const WEBHOOK_URL = "https://hook.us2.make.com/jvx9gxtohfxc6wl4hrs39mj1tvbs9v32";
+
+  const selector = document.getElementById("entidad");
+  const boton = document.getElementById("consultar");
+  const resultado = document.getElementById("resultado");
+
+  boton.addEventListener("click", async () => {
+    boton.disabled = true;
+    resultado.className = "";
+    resultado.textContent = "Consultando...";
+    try {
+      const cuerpo = new URLSearchParams();
+      cuerpo.append("entidad", selector.value);
+      const respuesta = await fetch(WEBHOOK_URL, { method: "POST", body: cuerpo });
+      if (!respuesta.ok) throw new Error("HTTP " + respuesta.status);
+      resultado.textContent = await respuesta.text();
+    } catch (error) {
+      resultado.className = "error";
+      resultado.textContent = "No se pudo obtener la información, intenta de nuevo.";
+    } finally {
+      boton.disabled = false;
+    }
+  });
+</script>
+</body>
+</html>
